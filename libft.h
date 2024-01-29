@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2023/11/17 09:52:32 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/29 17:38:49 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stddef.h>
 
+// libft project
 typedef struct s_list
 {
 	void			*content;
@@ -107,4 +108,11 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+// ft_printf project
+int	                ft_printf(const char *format, ...);
+
+// get_next_line project
+char	            *get_next_line(int fd);
+
 #endif
