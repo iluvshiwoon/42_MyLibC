@@ -6,11 +6,11 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 11:49:14 by kgriset           #+#    #+#             */
-/*   Updated: 2024/01/30 14:52:52 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/30 15:12:26 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mylibc.h"
+#include "mylibc_local.h"
 
 int	*ft_atoi_safe(char *string)
 {
