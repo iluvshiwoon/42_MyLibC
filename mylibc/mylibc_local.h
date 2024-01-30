@@ -1,24 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mylibc.h                                           :+:      :+:    :+:   */
+/*   mylibc_local.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/01/30 14:53:18 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/30 19:23:06 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MYLIBC_H
-# define MYLIBC_H
+#ifndef MYLIBC_LOCAL_H
+# define MYLIBC_LOCAL_H
 # include <stddef.h>
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 
 // mylibc
+
+typedef enum e_signal 
+{
+    ERROR = 0,
+    SUCCESS, 
+} t_signal;
+
+// functions
 int	*ft_atoi_safe(char *string);
+
+void *my_realloc(void * p_origin, size_t origin_size, size_t requested_size);
+
+//  vector implementation
+# define VECTOR_INIT_CAPACITY 10
+
+typedef struct s_vector_list
+{
+    void **items;
+    size_t capacity;
+    size_t total;
+} t_vector_list;
+
+typedef struct s_vector t_vector;
+struct s_vector
+{
+    t_vector_list vector_list;
+
+    int (*pf_vector_total)(t_vector *);
+    int (*pf_vector_resize)(t_vector *, size_t);
+    int (*pf_vector_add)(t_vector *, void *);
+    int (*pf_vector_set)(t_vector *, size_t, void *);
+    int (*pf_vector_get)(t_vector *, size_t);
+    int (*pf_vector_delete)(t_vector *, size_t);
+    int (*pf_vector_free)(t_vector *);
+};
+
+int vector_resize(t_vector *v, size_t capacity);
+int vector_add(t_vector *v, void *item);
+int vector_delete(t_vector *v, size_t index);
+////////////////////////////////////////////////////////////////////////////
 
 // libft project
 typedef struct s_list
