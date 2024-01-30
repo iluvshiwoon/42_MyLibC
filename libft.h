@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/01/29 17:38:49 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/30 14:43:37 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,8 @@ int	                ft_printf(const char *format, ...);
 
 // get_next_line project
 char	            *get_next_line(int fd);
+
+// mylibc
+int	*ft_atoi_safe(char *string);
 
 #endif
