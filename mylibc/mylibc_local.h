@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/01/31 18:15:52 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/31 18:22:21 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ struct s_vector
     int (*pf_vector_delete)(t_vector *, size_t);
     int (*pf_vector_free)(t_vector *);
 };
+
+void vector_init(t_vector *v);
 
 int vector_resize(t_vector *v, size_t capacity);
 int vector_add(t_vector *v, void *item);
