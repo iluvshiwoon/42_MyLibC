@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/01/30 19:23:06 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:06:25 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef enum e_signal
 } t_signal;
 
 // functions
-int	*ft_atoi_safe(char *string);
+int	ft_atoi_safe(char *string, int * status);
 
 void *my_realloc(void * p_origin, size_t origin_size, size_t requested_size);
 
