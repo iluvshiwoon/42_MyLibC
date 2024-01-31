@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/01/31 16:06:25 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/31 17:02:15 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi_safe(char *string, int * status);
 
 void *my_realloc(void * p_origin, size_t origin_size, size_t requested_size);
 
-//  vector implementation
+//  vector implementation suboptimal cause of aving to use my_realloc instead of the real deal
 # define VECTOR_INIT_CAPACITY 10
 
 typedef struct s_vector_list
@@ -49,7 +49,7 @@ struct s_vector
     int (*pf_vector_resize)(t_vector *, size_t);
     int (*pf_vector_add)(t_vector *, void *);
     int (*pf_vector_set)(t_vector *, size_t, void *);
-    int (*pf_vector_get)(t_vector *, size_t);
+    void *(*pf_vector_get)(t_vector *, size_t);
     int (*pf_vector_delete)(t_vector *, size_t);
     int (*pf_vector_free)(t_vector *);
 };
@@ -57,6 +57,10 @@ struct s_vector
 int vector_resize(t_vector *v, size_t capacity);
 int vector_add(t_vector *v, void *item);
 int vector_delete(t_vector *v, size_t index);
+int vector_free(t_vector *v);
+void *vector_get(t_vector *v, size_t index);
+int vector_set(t_vector *v, size_t index, void *item);
+int vector_total(t_vector *v);
 ////////////////////////////////////////////////////////////////////////////
 
 // libft project
