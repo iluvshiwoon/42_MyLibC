@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/01/31 17:02:15 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/01/31 18:15:52 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,28 @@ int vector_free(t_vector *v);
 void *vector_get(t_vector *v, size_t index);
 int vector_set(t_vector *v, size_t index, void *item);
 int vector_total(t_vector *v);
+
+// Doubly linked lists
+
+typedef struct s_double_linked_node t_double_linked_node;
+struct s_double_linked_node
+{
+    t_double_linked_node * next;
+    t_double_linked_node * previous;
+    void * data;
+};
+
+typedef struct s_double_linked_list
+{
+    t_double_linked_node * first_node;
+    t_double_linked_node * last_node;
+
+    int (*pf_insert_after)(t_double_linked_node * node, t_double_linked_node * new_node);
+} t_double_linked_list;
+
+// Circular doubly linked lists
+
+
 ////////////////////////////////////////////////////////////////////////////
 
 // libft project
