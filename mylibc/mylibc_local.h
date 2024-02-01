@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/01 11:57:50 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/01 12:17:17 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,12 +111,11 @@ struct s_circular_double_link_list {
                         t_double_link_node *node);
 };
 
-int cdl_insert_after(t_double_link_list *list, t_double_link_node *node,
-                 t_double_link_node *new_node);
-int cdl_insert_beginning(t_double_link_list *list, t_double_link_node *new_node);
-int cdl_insert_end(t_double_link_list *list, t_double_link_node *new_node);
-int cdl_delete_node(t_double_link_list *list, t_double_link_node *node);
-void cdl_init_list(t_double_link_list *list);
+int cdl_insert_after (t_double_link_node * node, t_double_link_node * new_node);
+int cdl_insert_beginning(t_circular_double_link_list *list, t_double_link_node *new_node);
+int cdl_insert_end(t_circular_double_link_list *list, t_double_link_node *new_node);
+int cdl_delete_node(t_circular_double_link_list *list, t_double_link_node *node);
+void cdl_init_list(t_circular_double_link_list *list);
 
 ////////////////////////////////////////////////////////////////////////////
 
