@@ -6,16 +6,16 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/01 12:17:17 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/01 14:31:13 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MYLIBC_LOCAL_H
-#define MYLIBC_LOCAL_H
-#include <limits.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
+# define MYLIBC_LOCAL_H
+# include <limits.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 // mylibc
 
