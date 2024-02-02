@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/01 15:14:14 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/02 16:34:49 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef enum e_signal {
 
 // functions
 int ft_atoi_safe(char *string, int *status);
-
+int free_split(char ** split);
 void *my_realloc(void *p_origin, size_t origin_size, size_t requested_size);
 
 //  vector implementation suboptimal cause of aving to use my_realloc instead of
@@ -111,11 +111,13 @@ struct s_circular_double_link_list {
                         t_double_link_node *node);
 };
 
+void cdl_init_list(t_circular_double_link_list *list);
+
 int cdl_insert_after (t_double_link_node * node, t_double_link_node * new_node);
 int cdl_insert_beginning(t_circular_double_link_list *list, t_double_link_node *new_node);
 int cdl_insert_end(t_circular_double_link_list *list, t_double_link_node *new_node);
 int cdl_delete(t_circular_double_link_list *list, t_double_link_node *node);
-void cdl_init_list(t_circular_double_link_list *list);
+int cdl_free_list(t_circular_double_link_list * list);
 
 ////////////////////////////////////////////////////////////////////////////
 

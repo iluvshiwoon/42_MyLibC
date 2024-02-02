@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:15:03 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/01 12:17:40 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/02 16:09:12 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,10 @@ int cdl_delete (t_circular_double_link_list * list, t_double_link_node * node)
         {
             if (node == list->first_node)
                 list->first_node = node->next;
-            else
-                node->previous->next = node->next;
             if (node == list->last_node)
                 list->last_node = node->previous;
-            else
-                node->next->previous = node->previous;
+            node->previous->next = node->next;
+            node->next->previous = node->previous;
         }
         free(node->data);
         free(node);
