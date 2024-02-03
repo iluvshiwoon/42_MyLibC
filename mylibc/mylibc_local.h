@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/02 16:34:49 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/03 10:33:50 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef enum e_signal {
 int ft_atoi_safe(char *string, int *status);
 int free_split(char ** split);
 void *my_realloc(void *p_origin, size_t origin_size, size_t requested_size);
+int array_in_place_reverse(int * array, size_t end);
+int array_rotate(int * array, size_t amount, size_t end);
 
 //  vector implementation suboptimal cause of aving to use my_realloc instead of
 //  the real deal
