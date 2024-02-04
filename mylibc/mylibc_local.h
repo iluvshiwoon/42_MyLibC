@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/03 10:33:50 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/04 15:00:42 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,9 @@ typedef struct s_circular_double_link_list t_circular_double_link_list;
 struct s_circular_double_link_list {
   t_double_link_node *first_node;
   t_double_link_node *last_node;
+  size_t total;
 
-  int (*pf_insert_after)(t_double_link_node *node,
+  int (*pf_insert_after)(t_circular_double_link_list * cdl_list, t_double_link_node *node,
                          t_double_link_node *new_node);
   int (*pf_insert_beginning)(t_circular_double_link_list *list,
                              t_double_link_node *new_node);
@@ -115,7 +116,7 @@ struct s_circular_double_link_list {
 
 void cdl_init_list(t_circular_double_link_list *list);
 
-int cdl_insert_after (t_double_link_node * node, t_double_link_node * new_node);
+int cdl_insert_after (t_circular_double_link_list * cdl_list, t_double_link_node * node, t_double_link_node * new_node);
 int cdl_insert_beginning(t_circular_double_link_list *list, t_double_link_node *new_node);
 int cdl_insert_end(t_circular_double_link_list *list, t_double_link_node *new_node);
 int cdl_delete(t_circular_double_link_list *list, t_double_link_node *node);

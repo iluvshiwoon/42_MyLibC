@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:16:08 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/02 16:25:30 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/04 14:59:40 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void cdl_init_list(t_circular_double_link_list * list)
 {
     list->first_node = NULL;
     list->last_node = NULL;
+    list->total = 0;
 
     list->pf_insert_end = cdl_insert_end;
     list->pf_delete_node = cdl_delete;

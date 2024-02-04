@@ -6,13 +6,13 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:15:03 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/02 16:09:12 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/02/04 15:42:19 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mylibc_local.h"
 
-int cdl_insert_after (t_double_link_node * node, t_double_link_node * new_node)
+int cdl_insert_after (t_circular_double_link_list * cdl_list, t_double_link_node * node, t_double_link_node * new_node)
 {
     int status;
 
@@ -23,6 +23,7 @@ int cdl_insert_after (t_double_link_node * node, t_double_link_node * new_node)
         node->next->previous = new_node;
         new_node->next = node->next;
         node->next = new_node;
+        cdl_list->total++;
         status = SUCCESS;
     }
     return (status);
@@ -41,10 +42,11 @@ int cdl_insert_beginning (t_circular_double_link_list * list, t_double_link_node
             list->last_node = new_node;
             new_node->next = new_node;
             new_node->previous = new_node;
+            list->total++;
         }
         else
         {
-            list->pf_insert_after(list->last_node, new_node);
+            list->pf_insert_after(list, list->last_node, new_node);
             list->first_node = new_node;
         }
         status = SUCCESS;
@@ -63,7 +65,7 @@ int cdl_insert_end (t_circular_double_link_list * list, t_double_link_node * new
             list->pf_insert_beginning(list, new_node);
         else
         {
-            list->pf_insert_after(list->last_node, new_node);
+            list->pf_insert_after(list, list->last_node, new_node);
             list->last_node = new_node;
         }
         status = SUCCESS;
@@ -94,6 +96,7 @@ int cdl_delete (t_circular_double_link_list * list, t_double_link_node * node)
         }
         free(node->data);
         free(node);
+        list->total--;
         status = SUCCESS;
     }
     return (status);
