@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/04 15:00:42 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/04/01 10:56:15 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,29 +98,29 @@ int delete_node(t_double_link_list *list, t_double_link_node *node);
 void init_list(t_double_link_list *list);
 // Circular doubly link lists
 
-typedef struct s_circular_double_link_list t_circular_double_link_list;
-struct s_circular_double_link_list {
+typedef struct s_circular_db_ll t_circular_db_ll;
+struct s_circular_db_ll {
   t_double_link_node *first_node;
   t_double_link_node *last_node;
   size_t total;
 
-  int (*pf_insert_after)(t_circular_double_link_list * cdl_list, t_double_link_node *node,
+  int (*pf_insert_after)(t_circular_db_ll * cdl_list, t_double_link_node *node,
                          t_double_link_node *new_node);
-  int (*pf_insert_beginning)(t_circular_double_link_list *list,
+  int (*pf_insert_beginning)(t_circular_db_ll *list,
                              t_double_link_node *new_node);
-  int (*pf_insert_end)(t_circular_double_link_list *list,
+  int (*pf_insert_end)(t_circular_db_ll *list,
                        t_double_link_node *new_node);
-  int (*pf_delete_node)(t_circular_double_link_list *list,
+  int (*pf_delete_node)(t_circular_db_ll *list,
                         t_double_link_node *node);
 };
 
-void cdl_init_list(t_circular_double_link_list *list);
+void cdl_init_list(t_circular_db_ll *list);
 
-int cdl_insert_after (t_circular_double_link_list * cdl_list, t_double_link_node * node, t_double_link_node * new_node);
-int cdl_insert_beginning(t_circular_double_link_list *list, t_double_link_node *new_node);
-int cdl_insert_end(t_circular_double_link_list *list, t_double_link_node *new_node);
-int cdl_delete(t_circular_double_link_list *list, t_double_link_node *node);
-int cdl_free_list(t_circular_double_link_list * list);
+int cdl_insert_after (t_circular_db_ll * cdl_list, t_double_link_node * node, t_double_link_node * new_node);
+int cdl_insert_beginning(t_circular_db_ll *list, t_double_link_node *new_node);
+int cdl_insert_end(t_circular_db_ll *list, t_double_link_node *new_node);
+int cdl_delete(t_circular_db_ll *list, t_double_link_node *node);
+int cdl_free_list(t_circular_db_ll * list);
 
 ////////////////////////////////////////////////////////////////////////////
 
