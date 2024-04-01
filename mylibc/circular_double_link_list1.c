@@ -6,13 +6,13 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:16:08 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/04 14:59:40 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/04/01 11:11:54 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mylibc_local.h"
 
-void cdl_init_list(t_circular_double_link_list * list)
+void cdl_init_list(t_circular_db_ll * list)
 {
     list->first_node = NULL;
     list->last_node = NULL;
@@ -24,7 +24,7 @@ void cdl_init_list(t_circular_double_link_list * list)
     list->pf_insert_beginning = cdl_insert_beginning;
 }
 
-int cdl_free_list(t_circular_double_link_list * list)
+int cdl_free_list(t_circular_db_ll * list)
 {
     int status;
 

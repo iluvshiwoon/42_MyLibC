@@ -6,13 +6,13 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:15:03 by kgriset           #+#    #+#             */
-/*   Updated: 2024/02/04 15:42:19 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/04/01 11:11:49 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mylibc_local.h"
 
-int cdl_insert_after (t_circular_double_link_list * cdl_list, t_double_link_node * node, t_double_link_node * new_node)
+int cdl_insert_after (t_circular_db_ll * cdl_list, t_double_link_node * node, t_double_link_node * new_node)
 {
     int status;
 
@@ -29,7 +29,7 @@ int cdl_insert_after (t_circular_double_link_list * cdl_list, t_double_link_node
     return (status);
 }
 
-int cdl_insert_beginning (t_circular_double_link_list * list, t_double_link_node * new_node)
+int cdl_insert_beginning (t_circular_db_ll * list, t_double_link_node * new_node)
 {
     int status;
 
@@ -54,7 +54,7 @@ int cdl_insert_beginning (t_circular_double_link_list * list, t_double_link_node
     return (status);
 }
 
-int cdl_insert_end (t_circular_double_link_list * list, t_double_link_node * new_node)
+int cdl_insert_end (t_circular_db_ll * list, t_double_link_node * new_node)
 {
     int status;
 
@@ -73,7 +73,7 @@ int cdl_insert_end (t_circular_double_link_list * list, t_double_link_node * new
     return (status);
 }
 
-int cdl_delete (t_circular_double_link_list * list, t_double_link_node * node)
+int cdl_delete (t_circular_db_ll * list, t_double_link_node * node)
 {
     int status;
 
