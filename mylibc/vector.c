@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:18:30 by kgriset           #+#    #+#             */
-/*   Updated: 2024/04/05 09:43:53 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/04/05 09:54:14 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	vector_init(t_vector *v)
 {
-	v->pf_vector_add = vector_add;
-	v->pf_vector_delete = vector_delete;
-	v->pf_vector_free = vector_free;
-	v->pf_vector_get = vector_get;
-	v->pf_vector_resize = vector_resize;
-	v->pf_vector_set = vector_set;
-	v->pf_vector_total = vector_total;
+	v->pf_vec_add = vector_add;
+	v->pf_vec_delete = vector_delete;
+	v->pf_vec_free = vector_free;
+	v->pf_vec_get = vector_get;
+	v->pf_vec_resize = vector_resize;
+	v->pf_vec_set = vector_set;
+	v->pf_vec_total = vector_total;
 	v->vector_list.capacity = VECTOR_INIT_CAPACITY;
 	v->vector_list.total = 0;
 	v->vector_list.items = malloc(sizeof(void *) * v->vector_list.capacity);

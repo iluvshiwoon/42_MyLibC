@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/04/05 09:43:21 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/04/05 10:16:15 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,13 @@ struct								s_vector
 {
 	t_vector_list					vector_list;
 
-	int								(*pf_vector_total)(t_vector *);
-	int								(*pf_vector_resize)(t_vector *, size_t);
-	int								(*pf_vector_add)(t_vector *, void *);
-	int								(*pf_vector_set)(t_vector *, size_t,
-										void *);
-	void							*(*pf_vector_get)(t_vector *, size_t);
-	int								(*pf_vector_delete)(t_vector *, size_t);
-	int								(*pf_vector_free)(t_vector *);
+	int								(*pf_vec_total)(t_vector *);
+	int								(*pf_vec_resize)(t_vector *, size_t);
+	int								(*pf_vec_add)(t_vector *, void *);
+	int								(*pf_vec_set)(t_vector *, size_t, void *);
+	void							*(*pf_vec_get)(t_vector *, size_t);
+	int								(*pf_vec_delete)(t_vector *, size_t);
+	int								(*pf_vec_free)(t_vector *);
 };
 
 void								vector_init(t_vector *v);
@@ -90,17 +89,19 @@ struct								s_double_link_list
 	t_double_link_node				*last_node;
 
 	int								(*pf_insert_after)(t_double_link_list *list,
-										t_double_link_node *node,
-										t_double_link_node *new_node);
-	int								(*pf_insert_before)(t_double_link_list *list,
-										t_double_link_node *node,
-										t_double_link_node *new_node);
-	int								(*pf_insert_beginning)(t_double_link_list *list,
-										t_double_link_node *new_node);
+			t_double_link_node *node,
+			t_double_link_node *new_node);
+	int								(*pf_insert_before)(t_double_link_list
+			*list,
+			t_double_link_node *node,
+			t_double_link_node *new_node);
+	int								(*pf_insert_beginning)(t_double_link_list
+			*list,
+			t_double_link_node *new_node);
 	int								(*pf_insert_end)(t_double_link_list *list,
-										t_double_link_node *new_node);
+			t_double_link_node *new_node);
 	int								(*pf_delete_node)(t_double_link_list *list,
-										t_double_link_node *node);
+			t_double_link_node *node);
 };
 
 int									insert_after(t_double_link_list *list,
@@ -125,15 +126,17 @@ struct								s_circular_db_ll
 	t_double_link_node				*last_node;
 	size_t							total;
 
-	int								(*pf_insert_after)(t_circular_db_ll *cdl_list,
-										t_double_link_node *node,
-										t_double_link_node *new_node);
-	int								(*pf_insert_beginning)(t_circular_db_ll *list,
-										t_double_link_node *new_node);
+	int								(*pf_insert_after)(t_circular_db_ll
+			*cdl_list,
+			t_double_link_node *node,
+			t_double_link_node *new_node);
+	int								(*pf_insert_beginning)(t_circular_db_ll
+			*list,
+			t_double_link_node *new_node);
 	int								(*pf_insert_end)(t_circular_db_ll *list,
-										t_double_link_node *new_node);
+			t_double_link_node *new_node);
 	int								(*pf_delete_node)(t_circular_db_ll *list,
-										t_double_link_node *node);
+			t_double_link_node *node);
 };
 
 void								cdl_init_list(t_circular_db_ll *list);
