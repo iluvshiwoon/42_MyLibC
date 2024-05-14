@@ -6,13 +6,13 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:15:03 by kgriset           #+#    #+#             */
-/*   Updated: 2024/04/05 09:46:29 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/05/14 19:26:46 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mylibc_local.h"
 
-int	pf_insert_after(t_double_link_list *list, t_double_link_node *node,
+int	insert_after(t_double_link_list *list, t_double_link_node *node,
 		t_double_link_node *new_node)
 {
 	int	status;
@@ -32,7 +32,7 @@ int	pf_insert_after(t_double_link_list *list, t_double_link_node *node,
 	return (status);
 }
 
-int	pf_insert_before(t_double_link_list *list, t_double_link_node *node,
+int	insert_before(t_double_link_list *list, t_double_link_node *node,
 		t_double_link_node *new_node)
 {
 	int	status;
@@ -52,7 +52,7 @@ int	pf_insert_before(t_double_link_list *list, t_double_link_node *node,
 	return (status);
 }
 
-int	pf_insert_beginning(t_double_link_list *list, t_double_link_node *new_node)
+int	insert_beginning(t_double_link_list *list, t_double_link_node *new_node)
 {
 	int	status;
 
@@ -73,7 +73,7 @@ int	pf_insert_beginning(t_double_link_list *list, t_double_link_node *new_node)
 	return (status);
 }
 
-int	pf_insert_end(t_double_link_list *list, t_double_link_node *new_node)
+int	insert_end(t_double_link_list *list, t_double_link_node *new_node)
 {
 	int	status;
 
@@ -89,7 +89,7 @@ int	pf_insert_end(t_double_link_list *list, t_double_link_node *new_node)
 	return (status);
 }
 
-int	pf_delete(t_double_link_list *list, t_double_link_node *node)
+int	delete_node(t_double_link_list *list, t_double_link_node *node)
 {
 	int	status;
 

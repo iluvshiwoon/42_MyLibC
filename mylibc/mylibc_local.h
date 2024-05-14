@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/04/05 10:16:15 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/05/14 18:01:18 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef enum e_signal
 }									t_signal;
 
 // functions
+char	**ft_mysplit(char const *s, char * set);
 int									ft_atoi_safe(char *string, int *status);
 int									free_split(char **split);
 void								*my_realloc(void *p_origin,
