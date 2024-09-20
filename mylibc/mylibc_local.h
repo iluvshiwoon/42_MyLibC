@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/09/20 17:57:33 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/09/20 22:16:50 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,16 @@ int									vector_set(t_vector *v, size_t index,
 int									vector_total(t_vector *v);
 
 // Abstract Syntax Tree
+typedef enum e_direction {
+    RIGHT = 56,
+    LEFT
+} t_direction;
+
 typedef struct s_ast t_ast;
 typedef struct s_ast_node t_ast_node;
 
 struct s_ast_node {
+    int type;
     t_ast_node * previous;
     t_ast_node * left;
     t_ast_node * right;
@@ -85,8 +91,15 @@ struct s_ast_node {
 
 struct s_ast {
     t_ast_node * first_node;
+    t_ast_node * last_node;
     t_ast_node * node;
 };
+
+int									ast_insert_end(t_ast *ast,
+									t_ast_node *new_node, t_direction direction);
+int									ast_delete_node(t_ast *ast,
+									t_ast_node *node);
+void								ast_init_ast(t_ast *ast);
 
 // Doubly linked lists
 
