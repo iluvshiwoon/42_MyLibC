@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:15:03 by kgriset           #+#    #+#             */
-/*   Updated: 2024/09/20 22:42:18 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/09/21 11:29:31 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ int	ast_insert_end(t_ast *ast, t_ast_node *new_node, t_direction direction)
 			ast->first_node = new_node;
 		}
 		else if (direction == LEFT)
-		{
 			ast->last_node->left = new_node;
-			return(status);
-		}
 		else
 		{
 			ast->last_node->right = new_node;
