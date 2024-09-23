@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/09/23 17:36:31 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/09/23 19:05:54 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ struct s_ast_node {
 
 struct s_ast {
     t_ast_node * first_node;
-    t_ast_node * last_node;
     t_ast_node * current_node;
 };
 
