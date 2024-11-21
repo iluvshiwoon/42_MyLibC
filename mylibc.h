@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/04/05 09:42:46 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/11/21 20:09:28 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 // ft_printf project
 int		ft_printf(const char *format, ...);
+int		ft_printf_fd(int fd,const char *format, ...);
 
 // get_next_line project
 char	*get_next_line(int fd);

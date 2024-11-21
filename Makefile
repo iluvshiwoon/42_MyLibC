@@ -1,5 +1,5 @@
 # replace C_FILES with hard coded path i.e. make a bash script
-C_FILES = $(wildcard libft/ft_*.c ft_printf/ft_*.c gnl/*bonus.c mylibc/*.c)
+C_FILES = $(wildcard libft/ft_*.c ft_printf_fd/ft_*.c gnl/*bonus.c mylibc/*.c)
 O_FILES = $(C_FILES:%.c=build/%.o)
 C_FLAGS = -Wall -Werror -Wextra
 NAME = libft.a 
@@ -14,7 +14,7 @@ $(NAME): $(O_FILES)
 
 build:
 	@mkdir -p build/libft
-	@mkdir -p build/ft_printf
+	@mkdir -p build/ft_printf_fd
 	@mkdir -p build/gnl
 	@mkdir -p build/mylibc
 
