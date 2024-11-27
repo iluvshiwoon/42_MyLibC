@@ -32,7 +32,8 @@ void	lexer_pointer(t_lexer_status *lexer_status, void *arg)
 		ptr_str = malloc(sizeof(char) * ptr_len);
 		if (!ptr_str)
 			return ;
-		printf_fd_convert_pointer((uintptr_t)arg, lexer_status, ptr_str, ptr_len);
+		printf_fd_convert_pointer((uintptr_t)arg, lexer_status, ptr_str,
+			ptr_len);
 	}
 	lexer_pointer2(lexer_status, ptr_str, ptr_len, arg);
 }
@@ -49,7 +50,8 @@ void	lexer_pointer2(t_lexer_status *lexer_status, char *ptr_str,
 	{
 		if (lexer_status->lexer_flags.minus)
 			printf_fd_pointer_write(lexer_status, arg, ptr_str, ptr_len);
-		printf_fd_width(lexer_status, lexer_status->width - ptr_len - prefix, ' ');
+		printf_fd_width(lexer_status, lexer_status->width - ptr_len - prefix,
+			' ');
 		if (!lexer_status->lexer_flags.minus)
 			printf_fd_pointer_write(lexer_status, arg, ptr_str, ptr_len);
 	}

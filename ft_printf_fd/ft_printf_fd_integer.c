@@ -48,14 +48,14 @@ void	lexer_integer2(t_lexer_status *lexer_status, char *int_str,
 		if (lexer_status->lexer_flags.minus)
 		{
 			printf_fd_integer_write(lexer_status, arg, int_str, int_len);
-			printf_fd_width(lexer_status, lexer_status->width - int_len - prefix,
-				' ');
+			printf_fd_width(lexer_status, lexer_status->width - int_len
+				- prefix, ' ');
 		}
 		if (!lexer_status->lexer_flags.minus)
 		{
 			printf_fd_integer_prefix(lexer_status, *((int *)arg));
-			printf_fd_width(lexer_status, lexer_status->width - int_len - prefix,
-				lexer_status->width_char);
+			printf_fd_width(lexer_status, lexer_status->width - int_len
+				- prefix, lexer_status->width_char);
 			printf_fd_integer_write(lexer_status, arg, int_str, int_len);
 		}
 	}

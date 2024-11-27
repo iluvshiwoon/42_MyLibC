@@ -6,12 +6,12 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 20:43:04 by kgriset           #+#    #+#             */
-/*   Updated: 2024/11/21 19:08:28 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:51:37 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_printf_fd_H
-# define FT_printf_fd_H
+#ifndef FT_PRINTF_FD_H
+# define FT_PRINTF_FD_H
 # include <limits.h>
 # include <stdarg.h>
 # include <stdint.h>
@@ -65,7 +65,7 @@ typedef struct s_state_map
 
 typedef struct s_lexer_status
 {
-    int fd;
+	int					fd;
 	t_lexer_state		lexer_state;
 	t_lexer_flags		lexer_flags;
 	int					width;
@@ -76,7 +76,7 @@ typedef struct s_lexer_status
 	t_case				_case_;
 }						t_lexer_status;
 
-int	ft_printf_fd(int fd, const char *format, ...);
+int						ft_printf_fd(int fd, const char *format, ...);
 unsigned int			iseof(char *format, size_t index);
 char					peek(char *format, size_t index);
 char					consume(char **format, size_t index);

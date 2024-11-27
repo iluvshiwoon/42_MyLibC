@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 15:25:53 by kgriset           #+#    #+#             */
-/*   Updated: 2024/11/21 19:08:52 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/11/27 15:13:11 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ unsigned int	iseof(char *format, size_t index)
 
 char	consume(char **format, size_t index)
 {
-	char	char_to_return ;
+	char	char_to_return;
 
-	char_to_return = (*(*format + index));
+	char_to_return = ((*(*format + index)));
 	*format += (index + 1);
 	return (char_to_return);
 }

@@ -47,13 +47,13 @@ void	lexer_u_integer2(t_lexer_status *lexer_status, char *u_int_str,
 		if (lexer_status->lexer_flags.minus)
 		{
 			printf_fd_u_integer_write(lexer_status, u_int_str, u_int_len);
-			printf_fd_width(lexer_status, lexer_status->width - u_int_len - prefix,
-				' ');
+			printf_fd_width(lexer_status, lexer_status->width - u_int_len
+				- prefix, ' ');
 		}
 		if (!lexer_status->lexer_flags.minus)
 		{
-			printf_fd_width(lexer_status, lexer_status->width - u_int_len - prefix,
-				lexer_status->width_char);
+			printf_fd_width(lexer_status, lexer_status->width - u_int_len
+				- prefix, lexer_status->width_char);
 			printf_fd_u_integer_write(lexer_status, u_int_str, u_int_len);
 		}
 	}

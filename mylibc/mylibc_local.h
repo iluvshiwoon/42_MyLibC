@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/09/23 19:05:54 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/11/27 15:09:31 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef enum e_signal
 }									t_signal;
 
 // functions
-char	**ft_mysplit(char const *s, char * set);
+char								**ft_mysplit(char const *s, char *set);
 int									ft_atoi_safe(char *string, int *status);
 int									free_split(char **split);
 void								*my_realloc(void *p_origin,
@@ -74,30 +74,34 @@ int									vector_set(t_vector *v, size_t index,
 int									vector_total(t_vector *v);
 
 // Abstract Syntax Tree
-typedef enum e_direction {
-    RIGHT = 56,
-    LEFT
-} t_direction;
+typedef enum e_direction
+{
+	RIGHT = 56,
+	LEFT
+}									t_direction;
 
-typedef struct s_ast t_ast;
-typedef struct s_ast_node t_ast_node;
+typedef struct s_ast				t_ast;
+typedef struct s_ast_node			t_ast_node;
 
-struct s_ast_node {
-    t_ast_node * previous;
-    t_ast_node * left;
-    t_ast_node * right;
-    void * data;
+struct								s_ast_node
+{
+	t_ast_node						*previous;
+	t_ast_node						*left;
+	t_ast_node						*right;
+	void							*data;
 };
 
-struct s_ast {
-    t_ast_node * first_node;
-    t_ast_node * current_node;
+struct								s_ast
+{
+	t_ast_node						*first_node;
+	t_ast_node						*current_node;
 };
 
 int									ast_insert_end(t_ast *ast,
-									t_ast_node *new_node, t_direction direction);
+										t_ast_node *new_node,
+										t_direction direction);
 int									ast_delete_node(t_ast *ast,
-									t_ast_node *node);
+										t_ast_node *node);
 
 // Doubly linked lists
 
@@ -119,12 +123,9 @@ struct								s_double_link_list
 			t_double_link_node *node,
 			t_double_link_node *new_node);
 	int								(*pf_insert_before)(t_double_link_list
-			*list,
-			t_double_link_node *node,
-			t_double_link_node *new_node);
+			*list, t_double_link_node *node, t_double_link_node *new_node);
 	int								(*pf_insert_beginning)(t_double_link_list
-			*list,
-			t_double_link_node *new_node);
+			*list, t_double_link_node *new_node);
 	int								(*pf_insert_end)(t_double_link_list *list,
 			t_double_link_node *new_node);
 	int								(*pf_delete_node)(t_double_link_list *list,
@@ -154,12 +155,9 @@ struct								s_circular_db_ll
 	size_t							total;
 
 	int								(*pf_insert_after)(t_circular_db_ll
-			*cdl_list,
-			t_double_link_node *node,
-			t_double_link_node *new_node);
+			*cdl_list, t_double_link_node *node, t_double_link_node *new_node);
 	int								(*pf_insert_beginning)(t_circular_db_ll
-			*list,
-			t_double_link_node *new_node);
+			*list, t_double_link_node *new_node);
 	int								(*pf_insert_end)(t_circular_db_ll *list,
 			t_double_link_node *new_node);
 	int								(*pf_delete_node)(t_circular_db_ll *list,

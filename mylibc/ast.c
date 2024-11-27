@@ -12,24 +12,24 @@
 
 #include "mylibc_local.h"
 
-int	ast_insert_after(t_ast_node *current_node\
-                     , t_ast_node *new_node, t_direction direction)
+int	ast_insert_after(t_ast_node *current_node, t_ast_node *new_node,
+		t_direction direction)
 {
 	int	status;
 
 	status = ERROR;
-    if (new_node && current_node)
+	if (new_node && current_node)
 	{
 		status = SUCCESS;
 		if (direction == LEFT)
-        {
-            current_node->left = new_node;
-            new_node->previous = current_node;
-        }
+		{
+			current_node->left = new_node;
+			new_node->previous = current_node;
+		}
 		else
 		{
-            current_node->right = new_node;
-            new_node->previous = current_node;
+			current_node->right = new_node;
+			new_node->previous = current_node;
 		}
 	}
 	return (status);

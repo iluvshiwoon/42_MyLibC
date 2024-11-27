@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mysplit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgriset <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/27 14:57:31 by kgriset           #+#    #+#             */
+/*   Updated: 2024/11/27 14:57:33 by kgriset          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../mylibc.h"
 
 static int	ft_isinset(char c, char const *set)
@@ -28,7 +40,7 @@ static void	free_mysplit(char **split, char *s_trimmed, size_t size)
 	free(split);
 }
 
-static char	*count_split(const char *s, char * set, size_t *sub_str_count)
+static char	*count_split(const char *s, char *set, size_t *sub_str_count)
 {
 	char	*s_trimmed;
 	size_t	i;
@@ -42,14 +54,14 @@ static char	*count_split(const char *s, char * set, size_t *sub_str_count)
 		(*sub_str_count)--;
 	while (s_trimmed[i])
 	{
-		if (ft_isinset(s_trimmed[i], set) && !ft_isinset(s_trimmed[i+1],set))
+		if (ft_isinset(s_trimmed[i], set) && !ft_isinset(s_trimmed[i + 1], set))
 			(*sub_str_count)++;
 		i++;
 	}
 	return (s_trimmed);
 }
 
-static char	**make_split(char **split, char *s_trimmed, char * set)
+static char	**make_split(char **split, char *s_trimmed, char *set)
 {
 	size_t	i;
 	size_t	j;
@@ -78,7 +90,7 @@ static char	**make_split(char **split, char *s_trimmed, char * set)
 	return (split);
 }
 
-char	**ft_mysplit(char const *s, char * set)
+char	**ft_mysplit(char const *s, char *set)
 {
 	size_t	sub_str_count;
 	char	**split;
@@ -93,4 +105,3 @@ char	**ft_mysplit(char const *s, char * set)
 	}
 	return (make_split(split, s_trimmed, set));
 }
-

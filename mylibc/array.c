@@ -33,7 +33,7 @@ int	array_in_place_reverse(int *array, size_t end)
 }
 
 int	array_rotate(int *array, size_t amount, size_t end)
-		// rot 1 left == rot 3 right hence rot left = range - rot right
+// rot 1 left == rot 3 right hence rot left = range - rot right
 {
 	if (array && end > 0 && array_in_place_reverse(array, end)
 		&& array_in_place_reverse(array, amount) && array_in_place_reverse(array

@@ -18,7 +18,7 @@
 
 // ft_printf project
 int		ft_printf(const char *format, ...);
-int		ft_printf_fd(int fd,const char *format, ...);
+int		ft_printf_fd(int fd, const char *format, ...);
 
 // get_next_line project
 char	*get_next_line(int fd);

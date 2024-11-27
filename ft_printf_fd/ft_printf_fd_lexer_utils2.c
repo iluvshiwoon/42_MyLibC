@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:23:22 by kgriset           #+#    #+#             */
-/*   Updated: 2024/11/21 19:08:41 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:56:03 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	printf_fd_width(t_lexer_status *lexer_status, int effective_width,
 	free(str_width);
 }
 
-void	printf_fd_write(t_lexer_status *lexer_status, char *address, size_t count)
+void	printf_fd_write(t_lexer_status *lexer_status, char *address,
+		size_t count)
 {
 	size_t	byte_read;
 
@@ -42,7 +43,8 @@ void	printf_fd_write(t_lexer_status *lexer_status, char *address, size_t count)
 	if (count <= 0)
 		return ;
 	while (byte_read < count)
-		byte_read += write(lexer_status->fd, address + byte_read, count - byte_read);
+		byte_read += write(lexer_status->fd, address + byte_read, count
+				- byte_read);
 	if (byte_read < count || (size_t)(INT_MAX
 		- lexer_status->printed_count) < byte_read)
 		lexer_status->return_value = -1;

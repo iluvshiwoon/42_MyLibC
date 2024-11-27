@@ -104,7 +104,8 @@ void	lexer_type(char **format, t_lexer_status *lexer_status, va_list ap)
 	if (lexer_status->lexer_state == TYPE)
 	{
 		if (current_char == '%')
-			process_type(format, lexer_status, &current_char, printf_fd_putchar);
+			process_type(format, lexer_status, &current_char,
+				printf_fd_putchar);
 		else if (current_char == 'c')
 			process_type(format, lexer_status, &((int){(va_arg(ap, int))}),
 				lexer_putchar);

@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:28:47 by kgriset           #+#    #+#             */
-/*   Updated: 2024/11/21 06:01:02 by kgriset          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:56:36 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	lexer_putstr(t_lexer_status *lexer_status, void *arg)
 	if (!arg)
 		arg = "(null)";
 	len = ft_strlen(arg);
-	if (lexer_status->lexer_flags.hash || lexer_status->lexer_flags.plus
+	if (lexer_status->lexer_flags.hash || \
+		lexer_status->lexer_flags.plus
 		/*|| lexer_status->lexer_flags.space*/
 		|| len > INT_MAX)
 		lexer_status->return_value = -1;

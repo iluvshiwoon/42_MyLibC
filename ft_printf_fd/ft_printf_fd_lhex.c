@@ -29,8 +29,8 @@ void	lexer_lhex(t_lexer_status *lexer_status, void *arg)
 		l_hex_str = malloc(sizeof(char) * (l_hex_len));
 		if (!l_hex_str)
 			return ;
-		printf_fd_convert_hexa((*((unsigned int *)arg)), lexer_status, l_hex_str,
-			l_hex_len);
+		printf_fd_convert_hexa((*((unsigned int *)arg)), lexer_status,
+			l_hex_str, l_hex_len);
 	}
 	lexer_lhex2(lexer_status, l_hex_str, l_hex_len, arg);
 }
@@ -47,14 +47,14 @@ void	lexer_lhex2(t_lexer_status *lexer_status, char *l_hex_str,
 		if (lexer_status->lexer_flags.minus)
 		{
 			printf_fd_hex_write(lexer_status, l_hex_str, l_hex_len);
-			printf_fd_width(lexer_status, lexer_status->width - l_hex_len - prefix,
-				' ');
+			printf_fd_width(lexer_status, lexer_status->width - l_hex_len
+				- prefix, ' ');
 		}
 		if (!lexer_status->lexer_flags.minus)
 		{
 			printf_fd_hex_prefix(lexer_status, *((unsigned int *)arg));
-			printf_fd_width(lexer_status, lexer_status->width - l_hex_len - prefix,
-				lexer_status->width_char);
+			printf_fd_width(lexer_status, lexer_status->width - l_hex_len
+				- prefix, lexer_status->width_char);
 			printf_fd_hex_write(lexer_status, l_hex_str, l_hex_len);
 		}
 	}
