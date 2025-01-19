@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2025/01/19 21:18:49 by kgriset          ###   ########.fr       */
+/*   Updated: 2025/01/19 22:45:38 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,8 @@ typedef struct s_link_list
     t_list * (*pf_lstlast(t_list *lst));
     int (*pf_lstsize(t_list *lst));
 } t_link_list;
+
+void	init_link_list(t_link_list *list);
 
 int									ft_atoi(const char *nptr);
 
