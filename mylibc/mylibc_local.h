@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2024/11/27 15:09:31 by kgriset          ###   ########.fr       */
+/*   Updated: 2025/01/19 21:18:49 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,7 @@ int									cdl_delete(t_circular_db_ll *list,
 										t_double_link_node *node);
 int									cdl_free_list(t_circular_db_ll *list);
 
+
 ////////////////////////////////////////////////////////////////////////////
 
 // libft project
@@ -185,6 +186,17 @@ typedef struct s_list
 	void							*content;
 	struct s_list					*next;
 }									t_list;
+
+typedef struct s_link_list
+{
+    t_list * first_node;
+    void (*pf_lstadd_back)(t_list ** lst, t_list *new);
+    void (*pf_lstadd_front)(t_list ** lst, t_list *new);
+    void (*pf_lstclear)(t_list **lst, void(*del)(void *));
+    void (*pf_lstiter(t_list *lst, void(*f)(void *)));
+    t_list * (*pf_lstlast(t_list *lst));
+    int (*pf_lstsize(t_list *lst));
+} t_link_list;
 
 int									ft_atoi(const char *nptr);
 
