@@ -6,7 +6,7 @@
 /*   By: kgriset <kgriset@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:41:11 by kgriset           #+#    #+#             */
-/*   Updated: 2025/01/19 22:45:38 by kgriset          ###   ########.fr       */
+/*   Updated: 2025/01/20 00:57:53 by kgriset          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,9 +193,9 @@ typedef struct s_link_list
     void (*pf_lstadd_back)(t_list ** lst, t_list *new);
     void (*pf_lstadd_front)(t_list ** lst, t_list *new);
     void (*pf_lstclear)(t_list **lst, void(*del)(void *));
-    void (*pf_lstiter(t_list *lst, void(*f)(void *)));
-    t_list * (*pf_lstlast(t_list *lst));
-    int (*pf_lstsize(t_list *lst));
+    void (*pf_lstiter)(t_list *lst, void(*f)(void *));
+    t_list * (*pf_lstlast)(t_list *lst);
+    int (*pf_lstsize)(t_list *lst);
 } t_link_list;
 
 void	init_link_list(t_link_list *list);
